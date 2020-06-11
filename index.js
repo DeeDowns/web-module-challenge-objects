@@ -26,17 +26,18 @@ and should return a number.
 
 For example, burger.discount("teacher") would return 13.5 and burger.discount("public") would return 16.2*/
 
-function discount(str) {
-  let price = 10;
+burger.discount = function(str) {
+  
   if(str === 'teacher' || str === 'student'){
-    price -= (price * 0.25) 
+    this.price -= (this.price * 0.25) 
   } else{
-    price -= (price * 0.10);
+    this.price -= (this.price * 0.10);
   }
-  return price;
+  return this.price;
 }
 
-// console.log(discount('public'))
+console.log(burger.discount('teacher'))
+console.log(burger)
 
 ///////////////Reviews (MVP)///////////////////
 
@@ -64,11 +65,13 @@ const reviews = [{name: "Daniela", rating: 5, feedback:"Beautiful atmosphere and
 
 
 /* Task 6: Add the following feedback to Reyna's rating - "this place is chill with really cool people, great for getting work done on weekdays"*/
-// function addFeedback(arr, index, str) {
-//   arr.feedback.push{}
-// }
+function addFeedback(arr, index, str) {
+  arr[index].feedback = str;
+  console.log(arr);
+}
 
-reviews[7].feedback = 'this place is chill with really cool people, great for getting work done on weekdays';
+addFeedback(reviews, 7, 'this place is chill with really cool people, great for getting work done on weekdays')
+// reviews[7].feedback = 'this place is chill with really cool people, great for getting work done on weekdays';
 // console.log(reviews)
 
 

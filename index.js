@@ -6,14 +6,14 @@ const breakfastBurrito = {name: "Breakfast Burrito", price: 16, category:"Breakf
 
 /* Task 1a: write a function to return more menu items with the same format as the items above. */
 
-function createMenuItem(name, cost, category){
-    return {name, cost, category};
+function createMenuItem(name, price, category){
+    return {name, price, category};
 }
 
 /* Task 1b: use your function to create 3 more menu items. You may add any items to the menu that you'd like */
-console.log(createMenuItem('Smoothie', 8, 'Drinks'))
-console.log(createMenuItem('Waffles', 15, "Breakfast"))
-console.log(createMenuItem('Shrimp Alfredo', 22, "Dinner"))
+// console.log(createMenuItem('Smoothie', 8, 'Drinks'))
+// console.log(createMenuItem('Waffles', 15, "Breakfast"))
+// console.log(createMenuItem('Shrimp Alfredo', 22, "Dinner"))
 
 
 /* Task 2: You're having a lunch special! 25% off for teachers and students, 10% off for everyone else. Add a method to your burger object that automatically calculates price given a string as a parameter. 
@@ -26,7 +26,17 @@ and should return a number.
 
 For example, burger.discount("teacher") would return 13.5 and burger.discount("public") would return 16.2*/
 
+function discount(str) {
+  let price = 10;
+  if(str === 'teacher' || str === 'student'){
+    price -= (price * 0.25) 
+  } else{
+    price -= (price * 0.10);
+  }
+  return price;
+}
 
+// console.log(discount('public'))
 
 ///////////////Reviews (MVP)///////////////////
 
@@ -41,9 +51,16 @@ const reviews = [{name: "Daniela", rating: 5, feedback:"Beautiful atmosphere and
 ]
 
 /* Task 4: Console.log just Julius' feedback */
+console.log(Object.values(reviews)[1].feedback);
 
 
 /* Task 5: Add a new rating with your (fictitious) opinions of the restaurant in the same format as the reviews above. */
+ function deeReview(arr,name, rating, feedback){
+   arr.push({name, rating, feedback});
+   return arr;
+ }
+ deeReview(reviews, 'Dee', 3, 'it was aight');
+ console.log(reviews)
 
 
 /* Task 6: Add the following feedback to Reyna's rating - "this place is chill with really cool people, great for getting work done on weekdays"

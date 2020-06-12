@@ -140,7 +140,6 @@ console.log(getLastReview(reviews));
     {name: "Wen", rating: 4.5, feedback:"I don't leave my house often, but when I do, it's for this place. Highly reccomend."},
     {name:"Lauren", rating: 4, feedback: "Absolutely love that they have karaoke Fridays! Food and drink selection is okay."}]
 */
-
 /*This is how I initially solved the task
 function getReviewByRating(arr, rating) {
     let reviewArr = [];
